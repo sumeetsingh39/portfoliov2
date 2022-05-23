@@ -453,9 +453,21 @@ img {
 
 .skills__list{
   row-gap: 1.5rem;
-  padding-left: 2.7rem;
+  /* padding-left: 2.7rem; */
+  grid-template-columns: repeat(3,1fr); /*For skills images, Del if want to revert to %*/
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+.skill__box{
+  text-align: center;
+}
+.skill__box img, .skill__box svg{
+  height: 3.2rem;
+  width: 100%;
 }
 
+.svg__black{
+  fill: var(--title-color);
+}
 .skills__titles{
   display: flex;
   justify-content: space-between;
@@ -522,6 +534,7 @@ img {
 .skills__open .skills__list{
   height: max-content;
   margin-bottom: var(--mb-2-5);
+  padding: 0.8rem 0;
 }
 
 .skills__open .skills__arrow{
@@ -619,6 +632,10 @@ img {
 
 .portfolio__description{
   margin-bottom: var(--mb-0-75);
+}
+
+.portfolio__button.no__link, .portfolio__button.no__link:hover{
+  background-color: #f44336;
 }
 
 .portfolio__button:hover .button__icon{
@@ -821,6 +838,10 @@ img {
   }
   
 }
+
+#send-message{
+  cursor: pointer;
+}
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 @media screen and (max-width:350px) {
@@ -852,7 +873,11 @@ img {
     gap: .5rem  ;
   }
 }
-
+@media screen and (max-width : 568px){
+  .portfolio__data{
+    text-align: center;
+  }
+}
 /* For medium devices */
 @media screen and (min-width : 568px) {
 

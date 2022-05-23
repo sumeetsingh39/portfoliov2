@@ -2,11 +2,12 @@
 
 const navMenu = document.getElementById('nav-menu'),
         navToggle = document.getElementById('nav-toggle'),
-        navClose = document.getElementById('nav-close')
+        navClose = document.getElementById('nav-close');
 
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
+
 
 if(navToggle){
     navToggle.addEventListener('click',()=>{
@@ -164,4 +165,100 @@ themeButton.addEventListener('click', () => {
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
+})
+
+
+// Sending mail
+
+const userName = document.getElementById('name'),
+        email = document.getElementById('email'),
+        subject = document.getElementById('subject'),
+        message = document.getElementById('message'),
+        send = document.getElementById('send-message');
+
+function validateInputs(){
+    if(!userName.value || !email.value || !subject.value || !message.value) return false;
+
+    return true;
+}
+
+function ValidateEmail(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.match(mailformat))
+{
+return true;
+}
+else
+{
+return false;
+}
+}
+
+send.addEventListener('click',()=>{
+    if(!validateInputs()) {
+        console.error("Please fill all the input fields")
+        Toastify({
+            text: "Please fill all the inputs",
+            duration: 3000,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#f44336",
+            },
+          }).showToast();
+    }
+    else if(!ValidateEmail(email.value)){
+        console.error('Please enter valid email')
+        Toastify({
+            text: "Email address invalid",
+            duration: 3000,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#f44336",
+            },
+          }).showToast();
+    }
+    else{
+        emailjs.send("service_8f4f9vz","template_sfd3ifx",{
+            name: userName.value,
+            email: email.value,
+            subject: subject.value,
+            message: message.value,
+            }).then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                Toastify({
+                    text: "Message sent successfully",
+                    duration: 3000,
+                    close: true,
+                    gravity: "bottom", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                      background: "#57e089",
+                      color : "#000000"
+                    },
+                  }).showToast();
+
+             }, (err) => {
+                console.log('FAILED...', err);
+                Toastify({
+                    text: "Message failed to send",
+                    duration: 3000,
+                    close: true,
+                    gravity: "bottom", // `top` or `bottom`
+                    position: "left", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                      background: "#f44336",
+                    },
+                  }).showToast();
+             });
+        ;
+    }
 })
