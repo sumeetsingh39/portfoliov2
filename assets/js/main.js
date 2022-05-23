@@ -269,3 +269,97 @@ send.addEventListener('click',()=>{
         ;
     }
 })
+
+
+// Gsap starts
+
+gsap.registerPlugin(ScrollTrigger);
+var tl = gsap.timeline();
+
+tl.from('.home__data', {
+    y: '-30%',
+    opacity : 0,
+    duration: 2,
+    ease : Power4.easeOut
+})
+tl.from('.stagger1',{
+    opacity : 0,
+    y: -50,
+    stagger : .3,
+    ease : Power4.easeOut,
+    duration :2
+}, "-=1.5")
+tl.from('.home__scroll', {
+    y: '30%',
+    opacity : 0,
+    duration: 2,
+    ease : Power4.easeOut
+}, "-=2")
+
+tl.from('.home__social', {
+    x: '-30%',
+    opacity : 0,
+    duration: 2,
+    ease : Power4.easeOut
+}, "-=2.5")
+
+tl.from('.home__img', {
+    y: '30%',
+    opacity : 0,
+    duration: 3,
+    ease : Power4.easeOut
+}, "-=3")
+
+gsap.from("#about",{
+    scrollTrigger : {
+        trigger : '#about',
+        start : "top center",
+        // scrub:0
+    },
+    y:50,
+    opacity : 0,
+    duration : .5,
+    stagger : .3
+})
+gsap.from("#portfolio",{
+    scrollTrigger : {
+        trigger : '#portfolio',
+        start : "top bottom",
+    },
+    y:50,
+    opacity : 0,
+    duration : 1.2,
+    stagger : .3
+})
+gsap.from("#contact",{
+    scrollTrigger : {
+        trigger : '#contact',
+        start : "top bottom",
+    },
+    y:50,
+    opacity : 0,
+    duration : 1.2,
+    stagger : .3
+})
+gsap.from("#skills",{
+    scrollTrigger : {
+        trigger : '#skills',
+        start : "top bottom",
+    },
+    y:50,
+    opacity : 0,
+    duration : 1.2,
+    stagger : .3
+})
+
+gsap.from("#qualification",{
+    scrollTrigger : {
+        trigger : '#qualification',
+        start : "top bottom",
+        
+    },
+    y:50,
+    opacity : 0,
+    duration : 1.2,
+    stagger : .3
+})

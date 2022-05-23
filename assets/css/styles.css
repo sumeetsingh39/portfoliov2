@@ -629,6 +629,10 @@ img {
   margin-bottom: var(--mb-0-5);
 
 }
+.portfolio__skills{
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
 
 .portfolio__description{
   margin-bottom: var(--mb-0-75);
@@ -636,6 +640,10 @@ img {
 
 .portfolio__button.no__link, .portfolio__button.no__link:hover{
   background-color: #f44336;
+}
+
+.portfolio__button{
+  margin-top: 1rem;
 }
 
 .portfolio__button:hover .button__icon{
