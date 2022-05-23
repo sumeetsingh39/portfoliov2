@@ -174,7 +174,8 @@ const userName = document.getElementById('name'),
         email = document.getElementById('email'),
         subject = document.getElementById('subject'),
         message = document.getElementById('message'),
-        send = document.getElementById('send-message');
+        send = document.getElementById('send-message'),
+        mIcon = document.getElementById('message-icon');
 
 function validateInputs(){
     if(!userName.value || !email.value || !subject.value || !message.value) return false;
@@ -225,6 +226,8 @@ send.addEventListener('click',()=>{
           }).showToast();
     }
     else{
+        mIcon.classList.remove('uil-message');
+        mIcon.classList.add('uil-spinner-alt')
         emailjs.send("service_8f4f9vz","template_sfd3ifx",{
             name: userName.value,
             email: email.value,
@@ -232,6 +235,8 @@ send.addEventListener('click',()=>{
             message: message.value,
             }).then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
+                mIcon.classList.remove('uil-spinner-alt');
+                mIcon.classList.add('uil-message')
                 Toastify({
                     text: "Message sent successfully",
                     duration: 3000,
@@ -247,6 +252,8 @@ send.addEventListener('click',()=>{
 
              }, (err) => {
                 console.log('FAILED...', err);
+                mIcon.classList.remove('uil-spinner-alt');
+                mIcon.classList.add('uil-message')
                 Toastify({
                     text: "Message failed to send",
                     duration: 3000,

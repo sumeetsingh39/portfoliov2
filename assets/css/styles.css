@@ -724,6 +724,16 @@ img {
   padding: .25rem .5rem .5rem 0;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--input-color) inset !important;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color:var(--text-color)!important;
+}
 
 /*==================== FOOTER ====================*/
 .footer{
@@ -817,6 +827,21 @@ img {
 }
 ::-webkit-scrollbar-thumb{
   background-color: var(--text-color-light);
+}
+
+
+.uil-spinner-alt {
+  animation: spin-animation 0.5s infinite;
+  display: inline-block;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }
 
 
