@@ -177,6 +177,38 @@ img {
   background-color: var(--body-color);
 }
 
+
+
+/* Loader */
+
+.loader{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--container-color);
+  color: var(--title-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader img{
+  width: 15rem;
+}
+
+.loader.hidden{
+  animation: fadeOut 1s  forwards;
+}
+
+@keyframes fadeOut {
+    100%{
+      opacity: 0;
+      visibility: hidden;
+    }
+}
+
 /*==================== NAV ====================*/
 
 .nav{
