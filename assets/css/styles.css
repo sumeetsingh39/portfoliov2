@@ -204,7 +204,10 @@ img {
 
 .nav__toggle{
   font-size: 1.1rem;
+  display: flex;
+  width: max-content;
   cursor: pointer;
+  justify-content: flex-end;
 }
 
 .nav__toggle:hover{
@@ -534,6 +537,8 @@ img {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   cursor: pointer;
+  
+  padding: 0 0.6rem;
 }
 
 .qualification__button:hover{
@@ -584,6 +589,8 @@ img {
 }
 .qualification__button.qualification__active{
   color: var(--first-color);
+  box-shadow: rgb(109 83 199) 0px 12px 24px -15px;
+  border-radius: 0.5rem;
 }
 /*==================== SERVICES ====================*/
 
