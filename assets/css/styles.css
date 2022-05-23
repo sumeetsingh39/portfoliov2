@@ -188,8 +188,8 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--container-color);
-  color: var(--title-color);
+  background-color: #fff;
+  /* color:; */
   display: flex;
   justify-content: center;
   align-items: center;
