@@ -203,7 +203,7 @@ send.addEventListener('click',()=>{
             text: "Please fill all the inputs",
             duration: 3000,
             close: true,
-            gravity: "bottom", // `top` or `bottom`
+            gravity: "top", // `top` or `bottom`
             position: "right", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
@@ -217,7 +217,7 @@ send.addEventListener('click',()=>{
             text: "Email address invalid",
             duration: 3000,
             close: true,
-            gravity: "bottom", // `top` or `bottom`
+            gravity: "top", // `top` or `bottom`
             position: "right", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
@@ -241,7 +241,7 @@ send.addEventListener('click',()=>{
                     text: "Message sent successfully",
                     duration: 3000,
                     close: true,
-                    gravity: "bottom", // `top` or `bottom`
+                    gravity: "top", // `top` or `bottom`
                     position: "right", // `left`, `center` or `right`
                     stopOnFocus: true, // Prevents dismissing of toast on hover
                     style: {
@@ -258,7 +258,7 @@ send.addEventListener('click',()=>{
                     text: "Message failed to send",
                     duration: 3000,
                     close: true,
-                    gravity: "bottom", // `top` or `bottom`
+                    gravity: "top", // `top` or `bottom`
                     position: "left", // `left`, `center` or `right`
                     stopOnFocus: true, // Prevents dismissing of toast on hover
                     style: {

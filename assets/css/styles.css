@@ -233,7 +233,12 @@ img {
 .nav__logo:hover g{
   fill:var(--first-color)
 }
-
+#color-btn{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: hsl(var(--hue-color), 69%, 61%);;
+}
 .nav__toggle{
   font-size: 1.1rem;
   display: flex;
@@ -299,6 +304,8 @@ img {
 .show-menu{
   bottom: 0;
 }
+
+
 
 /* Active link */
 .active-link{
@@ -1017,9 +1024,7 @@ input:-webkit-autofill{
   .nav__menu{
     margin-left: auto;
   }
-  .change-theme{
-    margin: 0;
-  }
+  
 
   .home__container{
     row-gap: 5rem;
